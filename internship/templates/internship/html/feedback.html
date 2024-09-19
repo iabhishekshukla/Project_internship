@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include 'internship/common/common_css.html'%}
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+  {%if messages%}
+  {%for m in messages%}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>{{m}}</strong> 
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {%endfor%}
+  {%endif%}
+     
+ 
+  
+
+    {% include 'internship/common/commonheader.html'%}
+    <div class="container-fluid bg-danger">
+        <h5 style="text-align: center;">Feedback</h5>
+      
+        </div>
+        <div class="row  justify-content-center mt-2">
+          <div class="col-8" style="border-style: solid;border-width:3px;border-color: rgb(161, 154, 154);">
+        <form method="post" action="/feedback/" class="form">
+          {%csrf_token%}
+      
+          <label for="exampleFormControlInput1" class="form-label">Name</label>
+          <input type="text" class="form-control"  placeholder="please enter your Name" name="name">
+          <label for="exampleFormControlInput1" class="form-label">Email</label>
+          <input type="email" class="form-control" placeholder="please enter your email" name="email">
+   
+          <label for="exampleFormControlInput1" class="form-label">Date</label>
+          <input type="date" class="form-control" placeholder="program start date" name="date">
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"> Give Feedback</label>
+            <textarea class="form-control" name="feedbacktext" rows="3"></textarea>
+            <select  name="rating" class="form-select">
+
+              <option value="def">Select Rating</option>
+              
+              <option value="1">*</option>
+              <option value="2">**</option>
+              <option value="3">***</option>
+              <option value="4">****</option>
+              <option value="5">*****</option>
+            </select>
+            <button class="btn btn-light">Submit</button>
+          </form>
+          </div>
+          </div>
+          <style>
+            body{
+              background-image: url("{%static 'internship/images/fed1.jpg'%}");
+              background-size: cover;
+              background-position:top;
+              background-repeat: no-repeat;
+            }
+            .form-label{
+              color: rgb(23, 23, 22);
+            }
+           
+          
+          </style>
+          {%include 'internship/common/commonfooter.html'%}
+          {%include 'internship/common/common_js.html'%} 
+      </body>
+      </html>
+    
+     
+
+      
+      
+      
+          
+          
+       

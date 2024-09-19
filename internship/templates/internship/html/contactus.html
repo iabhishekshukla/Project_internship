@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include 'internship/common/common_css.html'%}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'internship/common/commonheader.html'%}
+    {%if messages%}
+    {%for m in messages%}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{m}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {%endfor%}
+  {%endif%}
+    
+    
+       
+
+    
+    <form method="post" action="/contactus/">
+        {%csrf_token%}
+    
+    <div class="row  justify-content-center mt-2">
+        <div class="col-6" style="border-style: solid;border-width:3px;border-color: rgb(49, 40, 40);">
+    
+    <div class="row">
+        
+        
+        <div class="mb-0">
+        <label for="name" class="from-label">your name</label><i class="fas fa-home"></i>
+        <input type="text" name="username" placeholder="enter your name" class="form-control required">
+        </div>
+        <div class="mb-0">
+            <label for="email" class="from-label">your email</label>
+            <input type="email" name="useremail" placeholder="enter your email" class="form-control">
+        </div>
+        <div class="mb-0">
+            <label for="phone" class="from-label">your phone</label>
+            <input type="number" name="userphone" placeholder="enter your phonenumber" class="form-control">
+        </div>
+        <div class="mb-0">
+            <label for="query" class="from-label">your query</label>
+            <textarea name="userquery" placeholder="enter your query" class="form-control"></textarea>
+        </div>
+        <!-- <div>
+        <label for="exampleFormControlInput1" class="form-label">Date</label>
+          <input type="date" class="form-control" placeholder="program start date" name="userdate">
+        </div> -->
+        
+        <div class="text-center">
+            <button class="btn btn-primary">submit</button>
+        </div>
+        </div>
+        </div>
+    </form>
+    <style>
+    body{
+        background-image: url("{%static 'internship/images/con1.jpg'%}");
+        background-size: cover;
+        background-position:top;
+        background-repeat: no-repeat;
+      }
+      .form-control{
+        color: rgb(78, 28, 53);
+      }
+   
+    </style>
+   
+    {%include 'internship/common/common_js.html'%} 
+</body>
+</html>

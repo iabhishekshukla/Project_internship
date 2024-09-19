@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include 'internship/common/common_css.html'%}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'internship/common/commonheader.html'%}
+    <div class="container-fluid bg-danger">
+        <h2 style="text-align: center;">Courses</h2>
+        <p style="text-align: center;">This is Courses page</p>
+        </div>
+        {% for p in program_data_key%}
+    
+        <div class="col">
+          <div class="card h-100">
+            <!-- <img src="/media/{{e.event_pic}}" class="card-img-top"
+              alt="event pictures" style="width: 100%;height: 100%;" /> -->
+            <div class="card-body">
+              <h5 class="card-title">Program Name: {{p.programname}}</h5>
+              <h5 class="card-title">Duration: {{p.duration}}</h5>
+              <h5 class="card-title">Fees description: {{p.fees}}</h5>
+              <!-- <h5 class="card-title">Start date{{p.startdate}}</h5> -->
+              <!-- <h5 class="card-title">End date{{p.enddate}}</h5> -->
+              <h5 class="card-title">Perquisite: {{p.perquisite}}</h5>
+              <h5 class="card-title">Stipend: {{p.stipend}}</h5>
+              <h5 class="card-title">Description: {{p.description}}</h5>
+              
+              <p class="card-text">
+                
+              </p>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+      {%include 'internship/common/commonfooter.html'%}
+    {%include 'internship/common/common_js.html'%}   
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{%load static%}
+{% include 'internship/common/provider_common.html'%} 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'internship/common/common_css.html'%}
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/providereditprofile/">
+        {%csrf_token%}
+        <div class="card" style="width: 50%;height: auto;background-color: beige;max-width: left;">
+            <!-- <img class="card-img-top" src="/media/{{student_data.student_pic}}" alt="Card image cap"> -->
+            <div class="card-body">
+                <h2>your profile Details</h2>
+                <p class="card-text">Name:{{provider_data.organizationname}}
+                </p>
+                <p class="card-text">Duration:{{provider_data.ownername}}
+                
+                </p>
+                <p class="card-text">Email:
+                    <input type="email" name="provideremail" class="form-control" 
+            required value={{student_data.email}}></p>
+                
+            
+             <p class="card-text">Phone:
+                <input type="number" name="providernumber" class="form-control" 
+            required value={{student_data.email}}></p>
+            
+        
+         <p class="card-text">Address:
+            <input type="text" name="Adrress" class="form-control" 
+            required value={{student_data.address}}></p>
+
+   
+     <p class="card-text">City:
+        <input type="text" name="city" class="form-control" 
+            required value={{student_data.city}}></p>
+    
+     <p class="card-text">Domain:
+        <input type="text" name="domain" class="form-control" 
+            required value={{student_data.domain}}></p>
+    
+                
+        
+        
+            </div>
+        </div>
+            
+    
+    
+        </div>
+    </div>
+<!-- 
+    <p>This is provider view profile page</p> -->
+    {%include 'internship/common/commonfooter.html'%}
+{%include 'internship/common/common_js.html'%}     
+</body>
+</html>

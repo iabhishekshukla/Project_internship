@@ -1,0 +1,49 @@
+
+{% extends 'internship/internship_provider/provider_base.html'%}
+{%block title%}
+this is provider HOME PAGE
+{%endblock%}
+{%block style%}
+body{background-color:cyan}
+p{color:orange}
+{%endblock%}
+
+{%block content%}
+
+</div>
+    
+    
+    {%if messages%}
+    {%for m in messages%}
+    <form method="POSt">
+        {%csrf_token%}
+    
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{m}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+       
+      </div>
+    {%endfor%}
+
+    {%endif%}
+<div class="container-fluid bg-danger">
+<h2 style="text-align: center;">Student Home Page</h2>
+<p style="text-align: center;">WELCOME TO Course Provider Page</p>
+</div>
+<div class="card" style="width: 50%;height: auto;background-color: beige;max-width: left;">
+    <!-- <img class="card-img-top" src="/media/{{student_data.student_pic}}" alt="Card image cap"> -->
+    <div class="card-body">
+        <h2>your profile Details</h2>
+        <p class="card-text">Name:{{student_data.name}}
+        </p>
+        <p class="card-text">Email:{{student_data.email}}
+        </p>
+        </p>
+        <p class="card-text">Phone:{{student_data.phone}}
+        </p>
+        
+
+
+    </div>
+</div>
+{%endblock%}

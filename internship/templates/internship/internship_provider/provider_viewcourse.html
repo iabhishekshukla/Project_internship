@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{%load static%}
+{% include 'internship/common/provider_common.html'%} 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'internship/common/common_css.html'%}
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/providercourse/">
+    <div class="card" style="width: 50%;height: auto;background-color: rgb(232, 232, 207);max-width: left;">
+        <!-- <img class="card-img-top" src="/media/{{student_data.student_pic}}" alt="Card image cap"> -->
+       <div class="card-body">
+        {% for d in program_data_key%}
+           <h2>your Course Details</h2>
+           <p class="card-text">Name:{{d.programname}}
+           </p>
+           <p class="card-text">Duration:{{d.duration}}
+           
+           </p>
+           <p class="card-number">Email:{{d.fees}}
+           </p>
+       </p>
+       <p class="card-date">StartDate:{{d.startdate}}
+       </p>
+   </p>
+   <p class="card-date">EndDate:{{d.enddate}}
+   </p>
+</p>
+<p class="card-text">Perquisite:{{d.perquisite}}
+</p>
+</p>
+
+<p class="card-text">Stipend:{{d.stipend}}
+</p>
+<p class="card-text">Description:{{d.description}}
+</p>
+           
+   
+   
+       </div>
+    </div>
+    {%endfor%}
+
+    <p>This is course view page</p>
+    {%include 'internship/common/commonfooter.html'%}
+{%include 'internship/common/common_js.html'%}     
+</body>
+</html>

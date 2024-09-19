@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+    
+    
+<head>
+    <meta charset="UTF-8">
+    {%include 'internship/common/common_css.html'%}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Document</title>
+</head>
+<body>
+  {%include 'internship/common/commonheader.html'%}
+
+    
+    <div class="container-fluid bg-danger">
+    <h5 style="text-align: center;">REGISTRATION</h5>
+    
+    </div>
+    <div class="row  justify-content-center mt-1" style="color: bro">
+        <div class="col-8" style="border-style: solid;border-width:3px;border-color: rgb(179, 176, 18);color: aqua;">
+            <div class="mb-3">
+        
+    <!-- form code start -->
+    <form method="POST" action="/registration/">
+        {%csrf_token%}
+    
+        <label for="exampleFormControlInput1" class="form-label">Provider Id</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="please enter provider Id" name="providerid">
+        <label for="exampleFormControlInput1" class="form-label">Provider Password</label>
+        <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="please enter provider Password" name="provpass">
+        <label for="exampleFormControlInput1" class="form-label">Organization Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Organization Name" name="organizationname">
+        <label for="exampleFormControlInput1" class="form-label">Owner Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="please enter Owner Name" name="ownername">
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="please enter provider Email" name="email">
+        <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="please enter provider PhoneNumber" name="phonenumber">
+        <label for="exampleFormControlInput1" class="form-label">Address</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="please enter provider Address" name="address">
+        <label for="exampleFormControlInput1" class="form-label">City</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="please enter provider City" name="city">
+        <label for="exampleFormControlInput1" class="form-label">Domain</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="please enter provider Domain" name="domain">
+        
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">About Organization</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" name="aboutorganisation" rows="3"></textarea>
+      </div>
+      <button class="btn btn-success">Submit</button>
+    </form>
+    </div>
+    </div>
+    </div>
+    <!-- form code ends -->
+    <style>
+      body{
+        background-image: url("{%static 'internship/images/reg.jpg'%}");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+      .form-label{
+        color: rgb(206, 208, 44);
+      }
+      .form-control{
+        background-color:transparent;
+      }
+     
+    
+    </style>
+    {%include 'internship/common/commonfooter.html'%}
+   
+    {%include 'internship/common/common_js.html'%} 
+</body>
+</html>

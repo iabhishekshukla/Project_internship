@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    {%load static%}
+   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    {%include 'internship/common/common_css.html'%}
+</head>
+<body>
+ 
+    <div class="container-fluid bg-info">
+        
+    </div>
+    {% include 'internship/common/commonheader.html'%}
+
+    <div class="row  justify-content-center mt-5">
+      <div class="col-6" style="border-style: solid;border-width:3px;border-color: rgb(49, 40, 40);">
+    <!-- forms code start -->
+    <form method="POSt" action="/login/">
+      {%csrf_token%}
+        <div class="mb-3">
+            <label for="id" class="form-label">PROVIDER ID</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="providerid">
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+        <div class="mb-3">
+          <label for="pass" class="form-label">PROVIDER PASSWORD</label>
+          <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="provpass">
+          <div id="emailHelp" class="form-text"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    </div>
+    <!-- forms code ends -->
+<style>
+  body{
+    background-image: url("{%static 'internship/images/tech1.jpg'%}");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .form-label{
+    color: rgb(243, 231, 7);
+  }
+ 
+
+</style>
+
+
+{%include 'internship/common/common_js.html'%} 
+</body>
+</html>

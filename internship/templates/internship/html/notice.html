@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include 'internship/common/common_css.html'%}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'internship/common/commonheader.html'%}
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for n in notice_key%}
+        
+          <div class="col">
+            <div class="card h-100">
+              <!-- <img src="/media/{{e.event_pic}}" class="card-img-top"
+                alt="event pictures" style="width: 100%;height: 100%;" /> -->
+              <div class="card-body">
+                <h5 class="card-title">Event Name :{{n.providerid}}</h5>
+                <h5 class="card-title">venue name :{{n.noticetopic}}</h5>
+                <h5 class="card-title">event description :{{n.noticecontents}}</h5>
+                <!-- <h5 class="card-title">event date{{e.event_date}}</h5> -->
+                <p class="card-text">
+                  
+                </p>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+    <!-- <h1>this is notice page</h1> -->
+    {%include 'internship/common/commonfooter.html'%}
+    {%include 'internship/common/common_js.html'%}
+</body>
+</html>
